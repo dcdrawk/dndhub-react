@@ -46,3 +46,22 @@
     }
   }
 }
+
+.icon-button-wrapper {
+  border-radius: 50%;
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  &.raised {
+    @extend .whiteframe-z2;
+    &:hover {
+      @extend .whiteframe-z3;
+    }
+    //&:focus {
+    //  background-color: rgba(0,0,0,.12);
+    //}
+    &:active {
+      @extend .whiteframe-z4;
+    }
+  }
+}

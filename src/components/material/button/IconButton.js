@@ -23,12 +23,14 @@ class IconButton extends Component {
   }
   render() {
     return (
-      <button ref={(c) => {this.button = c} }
-              className={`button icon-button paper-button
-                          ${this.props.raised ? 'raised' : 'flat'}
-                          ${this.props.primary ? 'primary' : ''}`}>
-        <i className="material-icons">{this.props.icon ? this.props.icon : 'star'}</i>
-      </button>
+      <span className={`icon-button-wrapper ${this.props.raised ? 'raised' : 'flat'}`} >
+        <button ref={(c) => {this.button = c} }
+                className={`button icon-button paper-button
+                            ${this.props.raised ? 'raised' : 'flat'}
+                            ${this.props.primary ? 'primary' : ''}`}>
+          <i className="material-icons">{this.props.icon ? this.props.icon : 'star'}</i>
+        </button>
+      </span>
     );
 
   }

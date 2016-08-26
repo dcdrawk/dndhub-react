@@ -21,7 +21,7 @@ class App extends Component {
           <div className="row">
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div>
-                <Button raised primary>test</Button>
+                <Button>test</Button>
                 <IconButton icon="person" raised primary></IconButton>
               </div>
             </div>
