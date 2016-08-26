@@ -1,5 +1,16 @@
-@import './styles/layout';
-@import './styles/typography';
-@import './styles/flex-grid';
-@import './styles/whiteframe';
+//@import './styles/layout';
+//@import './styles/material-palette';
+//@import './styles/typography';
+//@import './styles/flex-grid';
+//@import './styles/whiteframe';
+//@import './styles/components/buttons';
 
+@import
+'./styles/layout',
+'./styles/material-palette',
+'./styles/variables',
+
+'./styles/typography',
+'./styles/flex-grid',
+'./styles/whiteframe',
+'./styles/components/buttons';

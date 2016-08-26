@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Card from './components/material/card/Card';
+import Button from './components/material/button/Button';
 import './App.css';
 
 class App extends Component {
@@ -15,10 +16,15 @@ class App extends Component {
         <section className="container">
           <div className="row">
             <div className="col-md-6 col-sm-12 col-xs-12">
-              <Card/>
+              <div>
+                <Button raised primary>test</Button>
+              </div>
+              <Card title="This is a Title"
+                    subtitle="This is a subtitle"
+                    actions={['test', 'test2']}/>
             </div>
             <div className="col-md-6 col-sm-12 col-xs-12">
-              <Card/>
+              <Card>Test</Card>
             </div>
             <div className="col-md-6 col-sm-12 col-xs-12">
               <Card/>

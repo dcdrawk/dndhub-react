@@ -1,0 +1,39 @@
+.button {
+  padding: 8px 16px;
+  position: relative;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  line-height: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: $transition-timing;
+  margin: 0 8px 8px 0;
+  &.flat {
+    &.primary {
+      color: $primary-color;
+    }
+  }
+  &.raised {
+    //background-color: $primary-color;
+
+    @extend .whiteframe-z2;
+    &:hover {
+      @extend .whiteframe-z3;
+    }
+    //&:focus {
+    //  background-color: rgba(0,0,0,.12);
+    //}
+    &:active {
+      @extend .whiteframe-z4;
+    }
+    &.primary {
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+
+}

@@ -70,18 +70,18 @@ $fg-breakpoints: (
  */
 @mixin spacing( $value, $type: margin, $orientation: vertical ) {
   @if $orientation == vertical {
-    #{ $type }-top: $value;
-    #{ $type }-bottom: $value;
+    #{ $type}-top: $value;
+    #{ $type}-bottom: $value;
   } @else {
-    #{ $type }-left: $value;
-    #{ $type }-right: $value;
+    #{ $type}-left: $value;
+    #{ $type}-right: $value;
   }
 }
 
 /**
  * Row wrapper class, flex box parent.
  */
-.#{ $fg-class-row } {
+.#{ $fg-class-row} {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -90,17 +90,18 @@ $fg-breakpoints: (
 }
 
 
-%#{ $fg-class-col } {
+%#{ $fg-class-col} {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
   @include spacing( ( $fg-gutter ), padding, horizontal );
+  margin-top: 16px;
 }
 
-%#{ $fg-class-col }-flex {
-  @extend %#{ $fg-class-col };
+%#{ $fg-class-col}-flex {
+  @extend %#{$fg-class-col};
   flex-grow: 1;
   flex-basis: 0;
   max-width: 100%;
@@ -116,13 +117,13 @@ $fg-breakpoints: (
  */
 
 @mixin grid-base( $namespace ) {
-  .#{ $fg-class-col }-#{$namespace} {
-    @extend %#{ $fg-class-col }-flex;
+  .#{ $fg-class-col}-#{$namespace} {
+    @extend %#{ $fg-class-col}-flex;
   }
 
   @for $i from 1 through $fg-columns {
-    .#{ $fg-class-col }-#{$namespace}-#{$i} {
-      @extend %#{ $fg-class-col };
+    .#{ $fg-class-col}-#{$namespace}-#{$i} {
+      @extend %#{ $fg-class-col};
     }
   }
 }
@@ -131,7 +132,7 @@ $fg-breakpoints: (
 
   // Run the loop for as many columns as speficied
   @for $i from 1 through $fg-columns {
-    .#{ $fg-class-col }-#{$namespace}-#{$i} {
+    .#{ $fg-class-col}-#{$namespace}-#{$i} {
       flex-basis: get-col-percent($i);
       max-width:  get-col-percent($i);
     }
@@ -141,7 +142,7 @@ $fg-breakpoints: (
 
     // Don't include the .off class for the last column
     @if ( $i != $fg-columns ) {
-      .#{ $fg-class-off }-#{$namespace}-#{$i} {
+      .#{ $fg-class-off}-#{$namespace}-#{$i} {
         margin-left: get-col-percent($i);
       }
     }
