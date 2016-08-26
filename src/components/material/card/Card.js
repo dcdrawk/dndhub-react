@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import CardActions from './CardActions';
-import Button from '../button/Button';
 import './card.css';
 
 class card extends Component {
@@ -15,12 +13,10 @@ class card extends Component {
           <h2 className="title">{this.props.title}</h2>
           <h3 className="subtitle">{this.props.subtitle}</h3>
         </div>
-        <p className="supporting-text">
-          {this.props.children}
-        </p>
-        <CardActions>
-          <Button raised primary>test</Button>
-        </CardActions>
+        {this.props.children}
+        {/*<CardActions>*/}
+          {/*<Button primary>test</Button>*/}
+        {/*</CardActions>*/}
       </div>
     );
 

@@ -1,11 +1,10 @@
 .card {
-  padding:24px 16px;
+  //padding:24px 16px;
   background-color: #fff;
   border-radius: 2px;
 
   .primary-title {
-    padding:0 0 16px 0;
-
+    margin: 24px 16px 16px 16px;
     .title {
       font-size: 24px;
       font-weight: 400;
@@ -20,8 +19,16 @@
     padding: 8px;
   }
 
-  .supporting-text {
-    font-size: 14px
+  .card-supporting-text {
+    font-size: 14px;
+    margin: 16px;
   }
 
+  .card-actions {
+    padding: 8px;
+    .button {
+      margin-bottom: 0;
+      color: rgba(0,0,0,.87);
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PaperRipple from 'paper-ripple';
-class Button extends Component {
+
+class IconButton extends Component {
 
   componentDidMount() {
     var button = this.button;
@@ -23,12 +24,14 @@ class Button extends Component {
   render() {
     return (
       <button ref={(c) => {this.button = c} }
-              className={`button paper-button
+              className={`button icon-button paper-button
                           ${this.props.raised ? 'raised' : 'flat'}
-                          ${this.props.primary ? 'primary' : ''}`}>{this.props.children}</button>
+                          ${this.props.primary ? 'primary' : ''}`}>
+        <i className="material-icons">{this.props.icon ? this.props.icon : 'star'}</i>
+      </button>
     );
 
   }
 }
 
-export default Button;
+export default IconButton;

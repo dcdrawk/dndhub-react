@@ -35,5 +35,14 @@
       background-color: $primary-color;
     }
   }
-
+  &.icon-button {
+    border-radius: 50%;
+    margin: 0;
+    height: 56px;
+    width: 56px;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    i {
+      vertical-align: middle;
+    }
+  }
 }
