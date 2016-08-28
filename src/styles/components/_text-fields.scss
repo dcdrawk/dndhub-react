@@ -1,39 +1,48 @@
 .input {
   margin: 16px 0;
   position: relative;
+
   label {
     display: block;
     position: absolute;
-    top: 4px;
-    transition: all .2s ease;
-    &.input-focus {
-      top: -16px;
+    transform: translateY(4px);
+    transition: $transition-timing;
+    color: rgba(0, 0, 0, .38);
+  }
+
+  input,
+  textarea {
+    background-color: transparent;
+    outline: none;
+    box-sizing: border-box;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .12);
+    padding: 4px 0;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 16px;
+
+  }
+
+  &.focus, &.has-value {
+    label {
+      transform: translateY(-16px);
       font-size: 12px;
     }
   }
 
-  input {
-    background-color: transparent;
-    outline: none;
-    // border: none;
-    box-sizing: border-box;
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: rgba(0,0,0,.12);
-    padding: 4px 0;
-    font-size: 16px;
-        // line-height: 26px;
-    &:focus {
-      border-bottom: 2px solid $primary-color;
-      margin-bottom: -1px;
-    }
-    
-  }
+  &.focus {
 
-  &:focus {
-    input {
-      border-bottom: 1px solid $primary-color;
-      
+    label {
+      color: $primary-color;
+    }
+
+    input,
+    textarea {
+      border-bottom: 2px solid $primary-color;
+      margin-bottom: 15px;
     }
   }
 }

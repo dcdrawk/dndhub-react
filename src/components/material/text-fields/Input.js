@@ -3,34 +3,37 @@ import React, {Component} from 'react';
 class Input extends Component {
   constructor(props) {
     super(props);
-    this.state = { count : 1 };
+    this.state = { value : props.value ? props.value : '' };
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
   }
 
   componentDidMount() {
-    // this._input.focus();
-    console.log(this);
+    if(this.state.value) {
+      let label = this.input.getElementsByTagName('label')[0];
+      label.className = 'input-focus';
+    }
   }
+
   onFocus() {
-    console.log('focus');
-    console.log(this);
-    let label = this.input.getElementsByTagName('label')[0];
-    // this.setState({
-    //   type: 'date'
-    // });
-    console.log(label);
-    label.className = 'input-focus';
+    this.setState({focus: true});
   }
+
   onBlur() {
-    let label = this.input.getElementsByTagName('label')[0];
-    label.className = '';
+    this.setState({focus: false});
   }
+
   render() {
     return (
 
-      <div className="input" onFocus={ this.onFocus.bind(this) } onBlur={ this.onBlur.bind(this) }  ref={(c) => {
-        this.input = c}}>
+      <div className={`input ${this.state.focus ? 'focus' : ''} ${this.state.value ? 'has-value' : ''} `}
+           onFocus={ this.onFocus.bind(this) }
+           onBlur={ this.onBlur.bind(this) }
+           ref={(c) => { this.input = c}}>
         <label>{this.props.label}</label>
-        <input type={this.props.type}/>
+        <input type={this.props.type} value={this.state.value} onChange={ this.handleChange.bind(this) }/>
       </div>
     );
 

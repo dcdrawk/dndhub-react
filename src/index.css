@@ -395,7 +395,7 @@ h5 {
   line-height: 20px;
   background-color: transparent;
   cursor: pointer;
-  transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
   margin: 0 8px 8px 0; }
   .button.flat.primary {
     color: #3f51b5; }
@@ -443,18 +443,50 @@ h5 {
   .toolbar i {
     color: #fff; }
 
+.checkbox-container {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none; }
+  .checkbox-container i {
+    position: absolute;
+    top: 0;
+    margin: 12px;
+    font-size: 16px;
+    opacity: 0;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    font-weight: 700; }
+  .checkbox-container .checkbox {
+    margin: 10px;
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgba(0, 0, 0, 0.54);
+    vertical-align: middle;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1); }
+  .checkbox-container.has-value i {
+    opacity: 1; }
+  .checkbox-container.has-value .checkbox {
+    background-color: #3f51b5;
+    border-color: #3f51b5; }
+
 .input {
   margin: 16px 0;
   position: relative; }
   .input label {
     display: block;
     position: absolute;
-    top: 4px;
-    transition: all .2s ease; }
-    .input label.input-focus {
-      top: -16px;
-      font-size: 12px; }
-  .input input {
+    transform: translateY(4px);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    color: rgba(0, 0, 0, 0.38); }
+  .input input,
+  .input textarea {
     background-color: transparent;
     outline: none;
     box-sizing: border-box;
@@ -462,9 +494,16 @@ h5 {
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.12);
     padding: 4px 0;
-    font-size: 16px; }
-    .input input:focus {
-      border-bottom: 2px solid #3f51b5;
-      margin-bottom: -1px; }
-  .input:focus input {
-    border-bottom: 1px solid #3f51b5; }
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 16px; }
+  .input.focus label, .input.has-value label {
+    transform: translateY(-16px);
+    font-size: 12px; }
+  .input.focus label {
+    color: #3f51b5; }
+  .input.focus input,
+  .input.focus textarea {
+    border-bottom: 2px solid #3f51b5;
+    margin-bottom: 15px; }

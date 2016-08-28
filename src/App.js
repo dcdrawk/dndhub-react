@@ -7,6 +7,8 @@ import Button  from './components/material/button/Button';
 import IconButton from './components/material/button/IconButton';
 import Toolbar from './components/material/toolbar/Toolbar';
 import Input from './components/material/text-fields/Input';
+import TextArea from './components/material/text-fields/TextArea';
+import Checkbox from './components/material/controls/Checkbox';
 
 import './App.css';
 
@@ -27,12 +29,14 @@ class App extends Component {
                 <IconButton icon="person" raised primary></IconButton>
                 <IconButton icon="star" type="square" primary></IconButton>
                 <IconButton icon="edit" raised type="small" primary></IconButton>
+                <Checkbox/>
               </div>
             </div>
 
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div>
-                <Input label="test" type="text"/>
+                <Input label="Label text" type="text" value="my value"/>
+                <TextArea label="Label text" type="text" value="my value"/>
               </div>
             </div>
 
