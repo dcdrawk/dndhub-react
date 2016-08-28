@@ -23,10 +23,11 @@ class IconButton extends Component {
   }
   render() {
     return (
-      <span className={`icon-button-wrapper ${this.props.raised ? 'raised' : 'flat'}`} >
+      <span className={`icon-button-wrapper ${this.props.raised ? 'raised' : 'flat'}  ${this.props.type ? this.props.type : ''}`} >
         <button ref={(c) => {this.button = c} }
                 className={`button icon-button paper-button
                             ${this.props.raised ? 'raised' : 'flat'}
+                            ${this.props.type ? this.props.type : ''}
                             ${this.props.primary ? 'primary' : ''}`}>
           <i className="material-icons">{this.props.icon ? this.props.icon : 'star'}</i>
         </button>

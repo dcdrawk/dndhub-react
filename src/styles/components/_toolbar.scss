@@ -1,0 +1,15 @@
+.toolbar {
+  height: 48px;
+  display: block;
+  position: relative;
+  color: #fff;
+  background-color: $primary-color;
+  padding: 8px;
+  .icon-button-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+  i {
+    color: #fff;
+  }
+}

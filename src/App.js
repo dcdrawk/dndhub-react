@@ -5,6 +5,8 @@ import CardActions from './components/material/card/CardActions';
 import CardSupportingText from './components/material/card/CardSupportingText';
 import Button  from './components/material/button/Button';
 import IconButton from './components/material/button/IconButton';
+import Toolbar from './components/material/toolbar/Toolbar';
+import Input from './components/material/text-fields/Input';
 
 import './App.css';
 
@@ -16,15 +18,24 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-
+        <Toolbar/>
         <section className="container">
           <div className="row">
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div>
                 <Button>test</Button>
                 <IconButton icon="person" raised primary></IconButton>
+                <IconButton icon="star" type="square" primary></IconButton>
+                <IconButton icon="edit" raised type="small" primary></IconButton>
               </div>
             </div>
+
+            <div className="col-md-12 col-sm-12 col-xs-12">
+              <div>
+                <Input label="test" type="text"/>
+              </div>
+            </div>
+
             <div className="col-md-6 col-sm-12 col-xs-12">
               <Card title="This is a Title"
                     subtitle="This is a subtitle">
