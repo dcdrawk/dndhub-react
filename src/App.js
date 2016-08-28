@@ -5,10 +5,11 @@ import CardActions from './components/material/card/CardActions';
 import CardSupportingText from './components/material/card/CardSupportingText';
 import Button  from './components/material/button/Button';
 import IconButton from './components/material/button/IconButton';
-import Toolbar from './components/material/toolbar/Toolbar';
+import AppBar from './components/material/toolbar/Toolbar';
 import Input from './components/material/text-fields/Input';
 import TextArea from './components/material/text-fields/TextArea';
 import Checkbox from './components/material/controls/Checkbox';
+import List from './components/material/lists/List';
 
 import './App.css';
 
@@ -20,9 +21,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <Toolbar/>
+        <AppBar title="dndhub"/>
         <section className="container">
           <div className="row">
+            <div className="col-md-12 col-sm-12 col-xs-12">
+              <List dense>
+                
+              </List>
+            </div>
+
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div>
                 <Button>test</Button>

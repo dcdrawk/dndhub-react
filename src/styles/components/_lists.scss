@@ -1,0 +1,47 @@
+.list {
+  list-style: none;
+  padding: 0;
+  li {
+    font-size: 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    transition: background-color .2s $swift-out;
+    padding: 0 16px;
+    position: relative;
+    user-select: none;
+    &.avatar {
+      height: 56px;
+    }
+  }
+  &.dense {
+    li {
+      font-size: 14px;
+      height: 40px;
+    }
+    li.avatar {
+      height: 48px;
+    }
+  }
+  .list-item-icon {
+    width: 56px;
+    opacity: .54;
+  }
+
+  .list-item-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    opacity: .54;
+    margin-right: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    i {
+      vertical-align: text-top;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+    }
+  }
+}

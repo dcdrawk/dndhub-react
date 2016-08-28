@@ -6,7 +6,7 @@ class Toolbar extends Component {
         return (
             <div className="toolbar">
                 <IconButton icon="menu" type="square"></IconButton>
-                Here's the toolbar
+                <span className="title">{this.props.title}</span>
             </div>
         );
 
