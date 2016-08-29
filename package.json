@@ -16,11 +16,13 @@
   "dependencies": {
     "babel-loader": "^6.2.5",
     "firebase": "^3.3.0",
+    "flux": "^2.1.1",
     "normalize.css": "^4.2.0",
     "paper-ripple": "^0.2.0",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-link-state": "^0.1.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-toolbox": "^1.1.2",

@@ -3,7 +3,7 @@ import ToolBar from './Toolbar';
 import List from '../lists/List';
 import ListItem from '../lists/ListItem';
 import IconButton from '../button/IconButton';
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+import { Link } from 'react-router'
 
 class AppBar extends Component {
 

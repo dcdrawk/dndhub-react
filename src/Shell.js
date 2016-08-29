@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AppBar from './components/material/toolbar/AppBar';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import './App.css';
 

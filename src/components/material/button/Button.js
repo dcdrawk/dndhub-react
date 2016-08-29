@@ -23,6 +23,7 @@ class Button extends Component {
   render() {
     return (
       <button ref={(c) => {this.button = c} }
+              onClick={this.props.onClick}
               className={`button paper-button
                           ${this.props.raised ? 'raised' : 'flat'}
                           ${this.props.primary ? 'primary' : ''}`}>{this.props.children}</button>

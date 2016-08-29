@@ -1,31 +1,58 @@
 import React, {Component} from 'react';
-import Card from './components/material/card/Card';
-import CardActions from './components/material/card/CardActions';
-import CardSupportingText from './components/material/card/CardSupportingText';
-import Button  from './components/material/button/Button';
-import IconButton from './components/material/button/IconButton';
-import Input from './components/material/text-fields/Input';
-import TextArea from './components/material/text-fields/TextArea';
-import Checkbox from './components/material/controls/Checkbox';
-import List from './components/material/lists/List';
+import Card from '../components/material/card/Card';
+import CardActions from '../components/material/card/CardActions';
+import CardContent from '../components/material/card/CardContent';
+import Button  from '../components/material/button/Button';
+import IconButton from '../components/material/button/IconButton';
+import Input from '../components/material/text-fields/Input';
+import Checkbox from '../components/material/controls/Checkbox';
+import { connect } from 'react-redux';
+// import linkState from 'react-link-state';
 
+class LogIn extends Component {
 
-class Home extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            email : 'test',
+            password : undefined
+        };
+    }
+
+    mapStateToProps(state, ownProps) {
+        console.log('map');
+        return {
+            active: ownProps.filter === state.visibilityFilter
+        }
+    }
+
+    handleChange(event) {
+        console.log(event);
+    }
+
+    logIn() {
+        console.log('log in');
+        console.log(this.state.email);
+        console.log(this.state.password);
+    }
     render() {
         return (
 
             <div>
 
                 <section className="container">
-
-
-
-                    <div className="row">
-                        <div className="col-md-12 col-sm-12 col-xs-12">
-                            <List dense>
-
-                            </List>
+                    <div className="row space-around">
+                        <div className="col-md-6 col-sm-8 col-xs-12">
+                            <Card title="Log In">
+                                <CardContent>
+                                    <Input label="Email" value={this.state.password} onChange={this.handleChange} type="text"/>
+                                    <Input label="Password" value={this.state.password} onChange={this.handleChange.bind(this)} type="password"/>
+                                </CardContent>
+                                <CardActions>
+                                    <Button primary onClick={this.logIn.bind(this)}>test</Button>
+                                </CardActions>
+                            </Card>
                         </div>
 
                         <div className="col-md-12 col-sm-12 col-xs-12">
@@ -37,53 +64,8 @@ class Home extends Component {
                                 <Checkbox/>
                             </div>
                         </div>
-
-                        <div className="col-md-12 col-sm-12 col-xs-12">
-                            <div>
-                                <Input label="Label text" type="text" value="my value"/>
-                                <TextArea label="Label text" type="text" value="my value"/>
-                            </div>
-                        </div>
-
-                        <div className="col-md-6 col-sm-12 col-xs-12">
-                            <Card title="This is a Title"
-                                  subtitle="This is a subtitle">
-                                <CardSupportingText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam consequatur corporis deserunt distinctio doloribus dolorum fugit iste magni natus nesciunt, optio qui quo ratione voluptatibus. Dignissimos ipsum iusto reprehenderit?</CardSupportingText>
-                                <CardActions>
-                                    <Button primary>test</Button>
-                                </CardActions>
-                            </Card>
-                        </div>
-                        <div className="col-md-6 col-sm-12 col-xs-12">
-
-                            <Card title="This is a Title"
-                                  subtitle="This is a subtitle">
-                                <CardSupportingText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam consequatur corporis deserunt distinctio doloribus dolorum fugit iste magni natus nesciunt, optio qui quo ratione voluptatibus. Dignissimos ipsum iusto reprehenderit?</CardSupportingText>
-                                <CardActions>
-                                    <Button primary>test</Button>
-                                </CardActions>
-                            </Card>
-
-                        </div>
-                        <div className="col-md-6 col-sm-12 col-xs-12">
-                            <Card title="This is a Title"
-                                  subtitle="This is a subtitle">
-                                <CardSupportingText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam consequatur corporis deserunt distinctio doloribus dolorum fugit iste magni natus nesciunt, optio qui quo ratione voluptatibus. Dignissimos ipsum iusto reprehenderit?</CardSupportingText>
-                                <CardActions>
-                                    <Button primary>test</Button>
-                                </CardActions>
-                            </Card>
-                        </div>
-                        <div className="col-md-6 col-sm-12 col-xs-12">
-                            <Card title="This is a Title"
-                                  subtitle="This is a subtitle">
-                                <CardSupportingText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam consequatur corporis deserunt distinctio doloribus dolorum fugit iste magni natus nesciunt, optio qui quo ratione voluptatibus. Dignissimos ipsum iusto reprehenderit?</CardSupportingText>
-                                <CardActions>
-                                    <Button primary>test</Button>
-                                </CardActions>
-                            </Card>
-                        </div>
                     </div>
+
                 </section>
             </div>
         );
@@ -91,4 +73,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default LogIn;
