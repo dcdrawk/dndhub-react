@@ -3,7 +3,14 @@ $primary-color: $clr-indigo-500;
 $transition-timing: all .3s cubic-bezier(.55,0,.1,1);
 
 $swift-out: cubic-bezier(.55,0,.1,1);
+
 //Fonts
 $light: 300;
 $regular: 400;
 $medium: 500;
+
+//Text Colors
+$primary-text: rgba(0,0,0, .87);
+$secondary-text: rgba(0,0,0, .54);
+$disabled-text: rgba(0,0,0, .38);
+$hint-text: rgba(0,0,0, .38);

@@ -568,6 +568,7 @@ h5 {
     font-size: 16px;
     height: 48px;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     transition: background-color 0.2s cubic-bezier(0.55, 0, 0.1, 1);
     padding: 0 16px;
@@ -582,7 +583,8 @@ h5 {
     height: 48px; }
   .list .list-item-icon {
     width: 56px;
-    opacity: .54; }
+    opacity: .54;
+    flex-shrink: 0; }
   .list .list-item-avatar {
     width: 40px;
     height: 40px;
@@ -591,9 +593,40 @@ h5 {
     margin-right: 16px;
     border-radius: 50%;
     display: flex;
+    flex-shrink: 0;
     align-items: center; }
     .list .list-item-avatar i {
-      vertical-align: text-top;
+      vertical-align: middle;
       text-align: center;
       width: 100%;
       color: #fff; }
+  .list .item-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .list .secondary-text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .list .two-line span {
+    display: block; }
+  .list .list-item-text-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.list li.two-line {
+  height: 72px; }
+  .list li.two-line .list-item-avatar i {
+    position: relative;
+    top: 8px; }
+  .list li.two-line.avatar {
+    height: 72px; }
+
+.list.dense li.two-line {
+  height: 60px; }
+
+.list.dense li.avatar {
+  height: 60px; }

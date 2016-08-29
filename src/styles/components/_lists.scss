@@ -5,6 +5,7 @@
     font-size: 16px;
     height: 48px;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     transition: background-color .2s $swift-out;
     padding: 0 16px;
@@ -26,6 +27,7 @@
   .list-item-icon {
     width: 56px;
     opacity: .54;
+    flex-shrink: 0;
   }
 
   .list-item-avatar {
@@ -36,12 +38,56 @@
     margin-right: 16px;
     border-radius: 50%;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     i {
-      vertical-align: text-top;
+      vertical-align: middle;
       text-align: center;
       width: 100%;
       color: #fff;
     }
   }
+  .item-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+  .secondary-text {
+    font-size: 14px;
+    color: $secondary-text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+  .two-line span {
+    display: block;
+  }
+  .list-item-text-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.list {
+  li.two-line {
+    height: 72px;
+    .list-item-avatar i {
+      position: relative;
+      top: 8px;
+    }
+    &.avatar {
+      height: 72px;
+    }
+  }
+
+  &.dense {
+    li.two-line {
+      height: 60px;
+    }
+    li.avatar {
+      height: 60px;
+    }
+  }
+
 }

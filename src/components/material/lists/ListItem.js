@@ -21,7 +21,7 @@ class ListItem extends Component {
 
     render() {
         return (
-            <li className={`list-item ${this.props.avatar ? 'avatar' : ''}`} ref={(c) => {this.listItem = c} }>
+            <li className={`list-item ${this.props.avatar ? 'avatar' : ''} ${this.props.secondaryText ? 'two-line' : ''}`} ref={(c) => {this.listItem = c} }>
                 {this.props.avatar && this.props.icon
                     ?
                     <span className="list-item-avatar">
@@ -39,7 +39,18 @@ class ListItem extends Component {
                     :
                     null
                 }
-                <span>{this.props.children}</span>
+                {this.props.secondaryText
+                    ?
+                    <span className="list-item-text-container">
+                        <span className="item-text">{this.props.text}</span>
+                        <span className="secondary-text">{this.props.secondaryText}</span>
+                    </span>
+                    :
+                    <span className="list-item-text-container">
+                        <span className="item-text">{this.props.text}</span>
+                    </span>
+                }
+
             </li>
         );
 
