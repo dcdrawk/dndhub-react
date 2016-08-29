@@ -43,8 +43,8 @@ class AppBar extends Component {
                     <nav>
                         <List>
                             <Link to="/about"><ListItem text="List Item"/></Link>
+                            <Link to="/login"><ListItem text="Log In"/></Link>
                             <Link to="/"><ListItem text="List Item2"/></Link>
-
                         </List>
                     </nav>
                 </div>

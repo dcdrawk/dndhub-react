@@ -6,7 +6,8 @@ import Button  from '../components/material/button/Button';
 import IconButton from '../components/material/button/IconButton';
 import Input from '../components/material/text-fields/Input';
 import Checkbox from '../components/material/controls/Checkbox';
-import { connect } from 'react-redux';
+import Firebase from 'firebase';
+// import { connect } from 'react-redux';
 // import linkState from 'react-link-state';
 
 class LogIn extends Component {
@@ -15,9 +16,10 @@ class LogIn extends Component {
         super(props);
 
         this.state = {
-            email : 'test',
+            email : 'tesdsadsaat',
             password : undefined
         };
+        console.log(this);
     }
 
     mapStateToProps(state, ownProps) {
@@ -28,14 +30,39 @@ class LogIn extends Component {
     }
 
     handleChange(event) {
-        console.log(event);
+        // console.log(event);
+        // console.log(this);
     }
 
     logIn() {
         console.log('log in');
-        console.log(this.state.email);
-        console.log(this.state.password);
+        console.log(this.email.state.value);
+        console.log(this.password.state.value);
+
+        let email = this.email.state.value;
+        let password = this.password.state.value;
+
+        Firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.error(errorCode);
+            console.error(errorMessage);
+
+            // ...
+        });
     }
+
+    componentDidMount() {
+        console.log('mounted');
+        // console.log(this);
+    }
+
+    componentDidUpdate() {
+        console.log('updated');
+        console.log(this);
+    }
+
     render() {
         return (
 
@@ -46,8 +73,18 @@ class LogIn extends Component {
                         <div className="col-md-6 col-sm-8 col-xs-12">
                             <Card title="Log In">
                                 <CardContent>
-                                    <Input label="Email" value={this.state.password} onChange={this.handleChange} type="text"/>
-                                    <Input label="Password" value={this.state.password} onChange={this.handleChange.bind(this)} type="password"/>
+                                    <form onChange={this.handleChange.bind(this)}>
+                                        <Input label="Email"
+                                               ref={(c) => {this.email = c}}
+                                               value={this.state.password}
+                                               onBlur={this.handleChange.bind(this)}
+                                               type="text"/>
+                                        <Input label="Password"
+                                               ref={(c) => {this.password = c}}
+                                               value={this.state.password}
+                                               onChange={this.handleChange.bind(this)}
+                                               type="password"/>
+                                    </form>
                                 </CardContent>
                                 <CardActions>
                                     <Button primary onClick={this.logIn.bind(this)}>test</Button>
