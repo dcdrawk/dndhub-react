@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Card from './components/material/card/Card';
 import CardActions from './components/material/card/CardActions';
 import CardSupportingText from './components/material/card/CardSupportingText';
 import Button  from './components/material/button/Button';
 import IconButton from './components/material/button/IconButton';
-import AppBar from './components/material/toolbar/Toolbar';
+import AppBar from './components/material/toolbar/AppBar';
 import Input from './components/material/text-fields/Input';
 import TextArea from './components/material/text-fields/TextArea';
 import Checkbox from './components/material/controls/Checkbox';
@@ -17,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
+
         <AppBar title="dndhub"/>
         <section className="container">
           <div className="row">

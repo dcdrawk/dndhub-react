@@ -23,7 +23,7 @@ class IconButton extends Component {
   }
   render() {
     return (
-      <span className={`icon-button-wrapper ${this.props.raised ? 'raised' : 'flat'}  ${this.props.type ? this.props.type : ''}`} >
+      <span onClick={this.props.onClick} className={`icon-button-wrapper ${this.props.raised ? 'raised' : 'flat'}  ${this.props.type ? this.props.type : ''}`} >
         <button ref={(c) => {this.button = c} }
                 className={`button icon-button paper-button
                             ${this.props.raised ? 'raised' : 'flat'}

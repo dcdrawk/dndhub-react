@@ -44,7 +44,6 @@ class Checkbox extends Component {
     }
 
     onClick() {
-        console.log('test');
         this.setState({value: !this.state.value});
     }
 
