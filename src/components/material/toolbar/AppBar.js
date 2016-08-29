@@ -3,11 +3,13 @@ import ToolBar from './Toolbar';
 import List from '../lists/List';
 import ListItem from '../lists/ListItem';
 import IconButton from '../button/IconButton';
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 
 class AppBar extends Component {
+
     constructor(props) {
         super(props);
-        this.state = { open : true };
+        this.state = { open : false };
     }
 
     toggleSidenav() {
@@ -40,7 +42,9 @@ class AppBar extends Component {
 
                     <nav>
                         <List>
-                            <ListItem text="List Item"/>
+                            <Link to="/about"><ListItem text="List Item"/></Link>
+                            <Link to="/"><ListItem text="List Item2"/></Link>
+
                         </List>
                     </nav>
                 </div>
